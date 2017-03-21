@@ -5,7 +5,7 @@
 ---
 
  1. 使用命令 `npm install` 或者 `yarn install` 安装依赖
- 2. 在 package.json 文件中，`font-prefix` 属性可以自定义 font 前缀
+ 2. 在 package.json 文件中，`font-options` 属性可以自定义 icon的 font-family 名称以及 font 前缀
  3. 把需要编译的 svg 图片放置到 src/icon 文件夹下
  4. 命令 `npm run server` 编译 svg 图片变成 iconfont 以及启动 server
  5. 浏览器中就可以预览 svg 图片并可以看到对应的 codepoint 和 class-name

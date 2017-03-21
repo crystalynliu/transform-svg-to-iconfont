@@ -2,7 +2,6 @@
   "name": "transform-svg-to-iconfont",
   "version": "1.0.0",
   "description": "use gulp-iconfont tansform svg to iconfont",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "icon": "node ./node_modules/gulp/bin/gulp iconfont",
@@ -17,5 +16,8 @@
     "gulp-webserver": "^0.9.1",
     "underscore": "^1.8.3"
   },
-  "font-prefix": "icon"
+  "font-options": {
+    "fontFamilyName": "iconfont",
+    "fontPrefix": "icon"
+  }
 }

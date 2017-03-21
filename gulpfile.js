@@ -2,12 +2,14 @@ var gulp = require('gulp');
 var consolidate = require('gulp-consolidate');
 var iconfont = require('gulp-iconfont');
 var webserver = require('gulp-webserver');
-var classPrefix = require('./package.json')['font-prefix'];
+var fontOptions = require('./package.json')['font-options'];
+var fontFamilyName = fontOptions.fontFamilyName;
+var classPrefix = fontOptions.fontPrefix;
 
 gulp.task('iconfont', function () {
   return gulp.src('src/icon/*.svg')
     .pipe(iconfont({
-      fontName: 'iconfont',
+      fontName: fontFamilyName,
       formats: ['ttf', 'eot', 'woff', 'woff2'],
       appendCodepoints: true,
       appendUnicode: false,
