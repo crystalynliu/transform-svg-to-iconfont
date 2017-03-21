@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "icon": "node ./node_modules/gulp/bin/gulp iconfont",
     "server": "node ./node_modules/gulp/bin/gulp server"
   },
   "author": "",
