@@ -1,7 +1,9 @@
 var gulp = require('gulp');
 var consolidate = require('gulp-consolidate');
 var iconfont = require('gulp-iconfont');
-var webserver = require('gulp-webserver');
+var watch = require('gulp-watch');
+var browserSync = require('browser-sync').create();
+
 var fontOptions = require('./package.json')['font-options'];
 var fontFamilyName = fontOptions.fontFamilyName;
 var classPrefix = fontOptions.fontPrefix;
@@ -38,13 +40,20 @@ gulp.task('iconfont', function () {
     .pipe(gulp.dest('dist/font'));
 });
 
-gulp.task('webServer', function () {
-  return gulp.src('dist')
-    .pipe(webserver({
-      fallback: 'index.html',
-      livereload: true,
-      open: true
-    }))
+gulp.task('browserSync', function() {
+  browserSync.init({
+    server: {
+      baseDir: "./dist"
+    },
+    port: 8000
+  });
+});
+
+gulp.task('watch', function () {
+  watch('src/icon/*.svg', function () {
+    gulp.start('iconfont');
+  })
+  watch('dist/*.html').on('change', browserSync.reload);
 })
 
-gulp.task('server', ['iconfont', 'webServer']);
+gulp.task('server', ['watch', 'iconfont', 'browserSync']);
