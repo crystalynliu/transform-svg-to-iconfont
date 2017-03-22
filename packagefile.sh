@@ -9,6 +9,7 @@ echo "2. Starting build new fontLib with new font folder and css file!"
 mkdir fontLibrary
 cp -R dist/font fontLibrary/
 cp dist/iconfont.css fontLibrary/
+cp dist/index.html fontLibrary/
 
 echo "3. Starting zip fontLib to fontLib.zip. Please input password '1' and send to your huawei email!"
 
