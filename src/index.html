@@ -33,9 +33,24 @@
         .glyphs-list li:nth-child(4n+1) {
             clear: left;
         }
-        .glyphs-list i {
-            font-size: 48px;
+        .glyphs-list i{
+            margin-left: 5px;
             line-height: 1;
+        }
+        .glyphs-list i:first-child {
+            margin-left: 0;
+        }
+        .glyphs-list .xlg-icon {
+            font-size: 48px;
+        }
+        .glyphs-list .lg-icon {
+            font-size: 30px;
+        }
+        .glyphs-list .md-icon {
+            font-size: 20px;
+        }
+        .glyphs-list .sm-icon {
+            font-size: 14px;
         }
         .glyphs-list code {
             display: block;
@@ -51,10 +66,14 @@
 <body>
 <div class="wrap">
     <h1><%= fontName %> - MyPACD glyphs list</h1>
+    <h3>icon size: 48px 30px 20px 14px</h3>
     <ul class="glyphs-list">
         <% _.each(glyphs, function(icon){ %>
         <li>
-            <i class="<%= prefix %>-<%= icon.name %>"></i>
+            <i class="<%= prefix %>-<%= icon.name %> xlg-icon"></i>
+            <i class="<%= prefix %>-<%= icon.name %> lg-icon"></i>
+            <i class="<%= prefix %>-<%= icon.name %> md-icon"></i>
+            <i class="<%= prefix %>-<%= icon.name %> sm-icon"></i>
             <code>\<%= icon.unicode[0].charCodeAt(0).toString(16) %></code>
             <input type="text" value="<%= prefix %>-<%= icon.name %>"/>
         </li>
