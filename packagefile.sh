@@ -6,6 +6,8 @@ rm -rf dist/fontLibrary.zip
 
 echo "2. Starting build new fontLib with new font folder and css file!"
 
+npm run icon
+
 mkdir fontLibrary
 cp -R dist/font fontLibrary/
 cp dist/iconfont.css fontLibrary/
