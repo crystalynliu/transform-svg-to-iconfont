@@ -50,7 +50,7 @@ gulp.task('browserSync', function() {
 });
 
 gulp.task('watch', function () {
-  watch('src/icon/*.svg', function () {
+  watch(['src/icon/*.svg', 'src/index.html'], function () {
     gulp.start('iconfont');
   })
   watch('dist/*.html').on('change', browserSync.reload);
